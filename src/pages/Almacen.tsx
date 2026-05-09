@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { materials } from "@/data/mock";
 import { Plus, Filter, Download } from "lucide-react";
+import { formatCOP } from "@/lib/format";
 
 const dot = (s: string) =>
   s === "ok" ? "bg-success" : s === "low" ? "bg-warning" : "bg-destructive";
@@ -54,7 +55,7 @@ export default function Almacen() {
                 <TableHead>Material</TableHead>
                 <TableHead className="text-right">Stock</TableHead>
                 <TableHead className="text-right">Punto de reorden</TableHead>
-                <TableHead className="text-right">CPP (USD)</TableHead>
+                <TableHead className="text-right">CPP</TableHead>
                 <TableHead className="text-right">Valor</TableHead>
               </TableRow>
             </TableHeader>
@@ -71,8 +72,8 @@ export default function Almacen() {
                   <TableCell className="font-medium">{m.name}</TableCell>
                   <TableCell className="text-right tabular-nums">{m.stock} {m.unit}</TableCell>
                   <TableCell className="text-right tabular-nums text-muted-foreground">{m.reorder} {m.unit}</TableCell>
-                  <TableCell className="text-right tabular-nums">${m.cpp.toFixed(2)}</TableCell>
-                  <TableCell className="text-right tabular-nums font-medium">${(m.stock * m.cpp).toFixed(2)}</TableCell>
+                  <TableCell className="text-right tabular-nums">{formatCOP(m.cpp)}</TableCell>
+                  <TableCell className="text-right tabular-nums font-medium">{formatCOP(m.stock * m.cpp)}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
