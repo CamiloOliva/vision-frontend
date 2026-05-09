@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { finance } from "@/data/mock";
+import { formatCOP } from "@/lib/format";
 import {
   Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis, Line, ComposedChart,
 } from "recharts";
@@ -23,7 +24,7 @@ export default function Finanzas() {
         ].map(c => (
           <Card key={c.l} className="border-border/60"><CardContent className="p-5">
             <div className="text-xs uppercase tracking-wider text-muted-foreground">{c.l}</div>
-            <div className={`text-3xl font-semibold mt-1 ${c.t}`}>${c.v.toLocaleString("en-US")}</div>
+            <div className={`text-3xl font-semibold mt-1 ${c.t}`}>{formatCOP(c.v, { compact: true })}</div>
           </CardContent></Card>
         ))}
       </div>
@@ -35,8 +36,11 @@ export default function Finanzas() {
             <ComposedChart data={data}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis dataKey="d" stroke="hsl(var(--muted-foreground))" fontSize={12} />
-              <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
-              <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
+              <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickFormatter={(v) => formatCOP(v, { compact: true })} />
+              <Tooltip
+                contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }}
+                formatter={(v: number) => formatCOP(v)}
+              />
               <Legend />
               <Bar dataKey="income" name="Ingresos" fill="hsl(var(--primary))" radius={[6,6,0,0]} />
               <Bar dataKey="expense" name="Egresos" fill="hsl(var(--steel))" radius={[6,6,0,0]} />
