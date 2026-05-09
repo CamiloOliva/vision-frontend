@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
 import { Bell, Search, ChevronRight, User, Settings, LogOut, HelpCircle, Building2, Check } from "lucide-react";
@@ -20,7 +20,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useNavigate, Link } from "react-router-dom";
 
 const titles: Record<string, string> = {
   "/": "Dashboard",
