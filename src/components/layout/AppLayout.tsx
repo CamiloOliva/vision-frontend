@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
-import { Bell, Search, ChevronRight, User, Settings, LogOut, HelpCircle, Building2, Check } from "lucide-react";
+import { Bell, Search, ChevronRight, Settings, LogOut } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -10,10 +10,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-  DropdownMenuGroup,
 } from "@/components/ui/dropdown-menu";
 import {
   Popover,
@@ -101,47 +99,28 @@ export default function AppLayout() {
                 <DropdownMenuTrigger asChild>
                   <button className="flex items-center gap-2 pl-1 pr-2 py-1 rounded-md hover:bg-secondary transition-colors">
                     <Avatar className="h-8 w-8">
-                      <AvatarFallback className="bg-primary text-primary-foreground text-xs font-semibold">VL</AvatarFallback>
+                      <AvatarFallback className="bg-primary text-primary-foreground text-xs font-semibold">P1</AvatarFallback>
                     </Avatar>
                     <div className="hidden md:block text-left leading-tight">
-                      <div className="text-xs font-medium">Valeria López</div>
-                      <div className="text-[10px] text-muted-foreground">Gerente de planta</div>
+                      <div className="text-xs font-medium">Prueba 1</div>
+                      <div className="text-[10px] text-muted-foreground">Sesión demo</div>
                     </div>
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-64">
+                <DropdownMenuContent align="end" className="w-60">
                   <div className="px-2 py-3 flex items-center gap-3">
                     <Avatar className="h-10 w-10">
-                      <AvatarFallback className="bg-primary text-primary-foreground text-sm font-semibold">VL</AvatarFallback>
+                      <AvatarFallback className="bg-primary text-primary-foreground text-sm font-semibold">P1</AvatarFallback>
                     </Avatar>
                     <div className="min-w-0">
-                      <div className="text-sm font-semibold truncate">Valeria López</div>
-                      <div className="text-xs text-muted-foreground truncate">valeria@factoryflow.co</div>
-                      <Badge variant="secondary" className="mt-1 text-[10px]">Administrador</Badge>
+                      <div className="text-sm font-semibold truncate">Prueba 1</div>
+                      <div className="text-xs text-muted-foreground truncate">Sesión de demostración</div>
                     </div>
                   </div>
                   <DropdownMenuSeparator />
-                  <DropdownMenuLabel className="text-[10px] uppercase tracking-wider text-muted-foreground">Empresa</DropdownMenuLabel>
-                  <DropdownMenuItem className="gap-2">
-                    <Building2 className="h-4 w-4" />
-                    <div className="flex-1">
-                      <div className="text-sm">Manufacturas Atlas S.A.</div>
-                      <div className="text-[11px] text-muted-foreground">Planta Bogotá</div>
-                    </div>
-                    <Check className="h-4 w-4 text-primary" />
+                  <DropdownMenuItem className="gap-2" onClick={() => navigate("/configuracion")}>
+                    <Settings className="h-4 w-4" /> Configuración
                   </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuGroup>
-                    <DropdownMenuItem className="gap-2" onClick={() => navigate("/configuracion")}>
-                      <User className="h-4 w-4" /> Mi perfil
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="gap-2" onClick={() => navigate("/configuracion")}>
-                      <Settings className="h-4 w-4" /> Configuración
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="gap-2">
-                      <HelpCircle className="h-4 w-4" /> Ayuda y soporte
-                    </DropdownMenuItem>
-                  </DropdownMenuGroup>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
                     className="gap-2 text-destructive focus:text-destructive"

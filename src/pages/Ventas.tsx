@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Plus } from "lucide-react";
 import { sales } from "@/data/mock";
+import { formatCOP } from "@/lib/format";
 
 const tone: Record<string, string> = {
   "Pagada": "bg-success/15 text-success",
@@ -26,11 +27,11 @@ export default function Ventas() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <Card className="border-border/60"><CardContent className="p-5">
           <div className="text-xs uppercase tracking-wider text-muted-foreground">Ventas del periodo</div>
-          <div className="text-3xl font-semibold mt-1">${total.toLocaleString("en-US", { minimumFractionDigits: 2 })}</div>
+          <div className="text-3xl font-semibold mt-1">{formatCOP(total)}</div>
         </CardContent></Card>
         <Card className="border-border/60"><CardContent className="p-5">
           <div className="text-xs uppercase tracking-wider text-muted-foreground">Por cobrar</div>
-          <div className="text-3xl font-semibold mt-1 text-warning-foreground">${pendiente.toLocaleString("en-US", { minimumFractionDigits: 2 })}</div>
+          <div className="text-3xl font-semibold mt-1 text-warning-foreground">{formatCOP(pendiente)}</div>
         </CardContent></Card>
         <Card className="border-border/60"><CardContent className="p-5">
           <div className="text-xs uppercase tracking-wider text-muted-foreground">Clientes activos</div>
@@ -56,7 +57,7 @@ export default function Ventas() {
                   <TableCell className="font-mono text-xs">{s.id}</TableCell>
                   <TableCell className="font-medium">{s.client}</TableCell>
                   <TableCell className="text-muted-foreground">{s.date}</TableCell>
-                  <TableCell className="text-right tabular-nums font-medium">${s.total.toLocaleString("en-US", { minimumFractionDigits: 2 })}</TableCell>
+                  <TableCell className="text-right tabular-nums font-medium">{formatCOP(s.total)}</TableCell>
                   <TableCell>
                     <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded font-semibold ${tone[s.status]}`}>{s.status}</span>
                   </TableCell>
