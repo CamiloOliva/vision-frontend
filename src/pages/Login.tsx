@@ -37,8 +37,8 @@ export default function Login() {
             <p className="text-sm text-muted-foreground mt-1">Ingresa con tus credenciales corporativas</p>
           </div>
           <div className="space-y-3">
-            <div className="grid gap-1.5"><Label>Usuario o correo</Label><Input defaultValue="valeria@factoryflow.co" /></div>
-            <div className="grid gap-1.5"><Label>Contraseña</Label><Input type="password" defaultValue="••••••••" /></div>
+            <div className="grid gap-1.5"><Label>Usuario o correo</Label><Input placeholder="usuario@empresa.com" /></div>
+            <div className="grid gap-1.5"><Label>Contraseña</Label><Input type="password" placeholder="••••••••" /></div>
           </div>
           <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Ingresar</Button>
           <div className="text-center text-xs text-muted-foreground">¿Olvidaste tu contraseña? <a className="text-primary hover:underline" href="#">Recupérala</a></div>
