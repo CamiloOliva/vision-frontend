@@ -24,19 +24,19 @@ export const productionTrend = [
 ];
 
 export const materials = [
-  { id: "MP-001", name: "Acero laminado 2mm", unit: "kg", stock: 1240, reorder: 800, cpp: 4.85, status: "ok" },
-  { id: "MP-002", name: "Pintura epóxica azul", unit: "L",  stock: 38,   reorder: 60,  cpp: 12.40, status: "low" },
-  { id: "MP-003", name: "Tornillo M6 inox",     unit: "ud", stock: 9800, reorder: 5000, cpp: 0.08, status: "ok" },
-  { id: "MP-004", name: "Empaque cartón XL",    unit: "ud", stock: 120,  reorder: 200, cpp: 0.75, status: "low" },
-  { id: "MP-005", name: "Lubricante industrial",unit: "L",  stock: 0,    reorder: 50,  cpp: 6.20, status: "out" },
-  { id: "MP-006", name: "Cable AWG 14",         unit: "m",  stock: 2400, reorder: 1000, cpp: 0.34, status: "ok" },
+  { id: "MP-001", name: "Acero laminado 2mm",    unit: "kg", stock: 1240, reorder: 800,  cpp: 19400, status: "ok" },
+  { id: "MP-002", name: "Pintura epóxica azul",  unit: "L",  stock: 38,   reorder: 60,   cpp: 49600, status: "low" },
+  { id: "MP-003", name: "Tornillo M6 inox",      unit: "ud", stock: 9800, reorder: 5000, cpp: 320,   status: "ok" },
+  { id: "MP-004", name: "Empaque cartón XL",     unit: "ud", stock: 120,  reorder: 200,  cpp: 3000,  status: "low" },
+  { id: "MP-005", name: "Lubricante industrial", unit: "L",  stock: 0,    reorder: 50,   cpp: 24800, status: "out" },
+  { id: "MP-006", name: "Cable AWG 14",          unit: "m",  stock: 2400, reorder: 1000, cpp: 1360,  status: "ok" },
 ];
 
 export const products = [
-  { id: "PT-101", name: "Estructura metálica STD", bomItems: 6, estCost: 84.20, price: 139.0, stock: 42 },
-  { id: "PT-102", name: "Mesa de trabajo Pro",     bomItems: 9, estCost: 162.5, price: 259.0, stock: 18 },
-  { id: "PT-103", name: "Estante modular S",        bomItems: 4, estCost: 38.7,  price: 69.9,  stock: 96 },
-  { id: "PT-104", name: "Carro logístico XL",       bomItems: 12, estCost: 245.0, price: 399.0, stock: 7 },
+  { id: "PT-101", name: "Estructura metálica STD", bomItems: 6,  estCost: 336800,  price: 556000,  stock: 42 },
+  { id: "PT-102", name: "Mesa de trabajo Pro",     bomItems: 9,  estCost: 650000,  price: 1036000, stock: 18 },
+  { id: "PT-103", name: "Estante modular S",       bomItems: 4,  estCost: 154800,  price: 279600,  stock: 96 },
+  { id: "PT-104", name: "Carro logístico XL",      bomItems: 12, estCost: 980000,  price: 1596000, stock: 7  },
 ];
 
 export const productionOrders = [
@@ -48,17 +48,17 @@ export const productionOrders = [
 ];
 
 export const sales = [
-  { id: "FV-9821", client: "Industrias Norte SAS", date: "2026-05-05", total: 4870.00, status: "Pagada" },
-  { id: "FV-9822", client: "Metalúrgica Andina",   date: "2026-05-05", total: 12450.00, status: "Pendiente" },
-  { id: "FV-9823", client: "Tornillos del Sur",    date: "2026-05-04", total: 980.50,  status: "Pagada" },
-  { id: "FV-9824", client: "Construcciones JL",    date: "2026-05-04", total: 7320.00, status: "Vencida" },
-  { id: "FV-9825", client: "Logística Pacífico",   date: "2026-05-03", total: 2150.00, status: "Pagada" },
+  { id: "FV-9821", client: "Industrias Norte SAS", date: "2026-05-05", total: 19_480_000, status: "Pagada"    },
+  { id: "FV-9822", client: "Metalúrgica Andina",   date: "2026-05-05", total: 49_800_000, status: "Pendiente" },
+  { id: "FV-9823", client: "Tornillos del Sur",    date: "2026-05-04", total: 3_922_000,  status: "Pagada"    },
+  { id: "FV-9824", client: "Construcciones JL",    date: "2026-05-04", total: 29_280_000, status: "Vencida"   },
+  { id: "FV-9825", client: "Logística Pacífico",   date: "2026-05-03", total: 8_600_000,  status: "Pagada"    },
 ];
 
 export const finance = [
-  { d: "Ene", income: 42000, expense: 31000 },
-  { d: "Feb", income: 48500, expense: 33500 },
-  { d: "Mar", income: 51200, expense: 36800 },
-  { d: "Abr", income: 56400, expense: 38900 },
-  { d: "May", income: 61000, expense: 41200 },
+  { d: "Ene", income: 168_000_000, expense: 124_000_000 },
+  { d: "Feb", income: 194_000_000, expense: 134_000_000 },
+  { d: "Mar", income: 204_800_000, expense: 147_200_000 },
+  { d: "Abr", income: 225_600_000, expense: 155_600_000 },
+  { d: "May", income: 244_000_000, expense: 164_800_000 },
 ];
