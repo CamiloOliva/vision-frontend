@@ -2,8 +2,9 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Plus, Layers, DollarSign, Boxes } from "lucide-react";
+import { Plus, Layers, Coins, Tag, Boxes } from "lucide-react";
 import { products } from "@/data/mock";
+import { formatCOP } from "@/lib/format";
 
 export default function Productos() {
   return (
@@ -29,9 +30,9 @@ export default function Productos() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <Row icon={<Layers className="h-4 w-4" />} label="Componentes BOM" value={`${p.bomItems} ítems`} />
-                <Row icon={<DollarSign className="h-4 w-4" />} label="Costo estimado" value={`$${p.estCost.toFixed(2)}`} />
-                <Row icon={<DollarSign className="h-4 w-4" />} label="Precio de venta" value={`$${p.price.toFixed(2)}`} />
-                <Row icon={<Boxes className="h-4 w-4" />} label="Stock disponible" value={`${p.stock} uds`} />
+                <Row icon={<Coins className="h-4 w-4" />}  label="Costo estimado"  value={formatCOP(p.estCost)} />
+                <Row icon={<Tag className="h-4 w-4" />}    label="Precio de venta" value={formatCOP(p.price)} />
+                <Row icon={<Boxes className="h-4 w-4" />}  label="Stock disponible" value={`${p.stock} uds`} />
                 <div className="flex gap-2 pt-2">
                   <Button variant="outline" size="sm" className="flex-1">Ver BOM</Button>
                   <Button size="sm" className="flex-1">Editar</Button>
